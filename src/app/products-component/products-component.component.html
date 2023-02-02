@@ -1,24 +1,35 @@
-<p>{{title}}</p>
-<div class="input-group mb-3">
-    <input type="text" class="form-control" placeholder="product name "[(ngModel)]="priceMax">
- <a href="" class="btn btn-primary">search</a>
+<nav class="navbar navbar-light bg-light">
+  <div class="container-fluid">
+    <div class="d-flex" style="margin-bottom: 50px;">
+      <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" [(ngModel)]="priceMax">
+      <button class="btn btn-outline-success" type="submit">Search</button>
+    </div>
   </div>
-<div class="row ">
+ 
     <div class="card" style="width: 18rem;" *ngFor="let p of listProdcut ,let i=index">
       <div *ngIf="priceMax<p.price || priceMax==null">
-        <img class="card-img-top" src="../../assets/images/5f0b7189031725.5de839cf50769.jpg" alt="Card image cap">
-        <div class="card-body">
-         
-          <h5 class="card-title">{{p.title}}</h5>
-          <p class="card-text"> quantity : {{p.quantity}}</p>
-          <p class="card-text"> price : {{p.price}}</p>
-
-          <p class="card-text"> likes : {{p.like}}</p>
-          <button href="#" class="btn btn-primary" (click)="buy(i)" [disabled]="p.quantity==0">buy</button> 
-          <button href="#" class="btn btn-primary" (click)="like(i)">like</button>
-        </div>
-        </div>
+      <img src="../../assets/images/5f0b7189031725.5de839cf50769.jpg" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">{{p.title}}</h5>
+        <p class="card-text"> quantity : {{p.quantity}}</p>
+        <p class="card-text"> price : {{p.price}}</p>
+        <p class="card-text"> likes : {{p.like}}</p>
+        <button href="#" class="btn btn-primary" (click)="buy(i)" [disabled]="p.quantity==0" style="margin-right: 5px;">buy</button> 
+        <button href="#" class="btn btn-primary" (click)="like(i)">like</button>
+      </div>
       </div>
     </div>
 
 
+
+
+    <!--
+    
+<nav class="navbar navbar-light bg-light">
+  <div class="container-fluid">
+    <form class="d-flex">
+      <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" [(ngModel)]="priceMax">
+      <button class="btn btn-outline-success" type="submit">Search</button>
+    </form>
+  </div>
+</nav>-->

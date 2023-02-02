@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
-import { SecondComponent } from './second/second.component'; 
-import { Routes, RouterModule } from '@angular/router'; // CLI imports router
+ import { Routes, RouterModule } from '@angular/router'; // CLI imports router
 
 /*
 const routes: Routes = [ { path: 'first-component', component: FirstComponent },
