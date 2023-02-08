@@ -1,0 +1,34 @@
+
+<h2>offres d'emplois : </h2>
+<nav class="navbar navbar-light bg-light">
+    <div class="container-fluid">
+      <div class="d-flex" style="margin-bottom: 50px;">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" >
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </div>
+    </div>
+<div class="row">
+
+<div class="card" style="width: 18rem;" *ngFor="let emp of listOffresEmploi ,let i=index">
+    <div class="card" style="width: 18rem;">
+         <div class="card-body">
+            <h5 class="card-title"> title : {{emp.titre}} </h5>
+            <h5 class="card-title"> reference : {{emp.reference}} </h5>
+            <h5 class="card-title"> entreprise : {{emp.entreprise}} </h5>
+            <h5 class="card-title"> etat : {{emp.etat}} </h5>
+            <div *ngIf="emp.etat==true ">
+            <button href="#" class="btn btn-primary">postuler</button>
+            </div>
+            <div *ngIf="emp.etat==false ">
+            <button href="#" class="btn btn-primary" disabled >postuler</button>
+            </div>
+
+        </div>
+      </div>
+
+</div>
+</div>
+</nav>
+<br>
+<button href="#" class="btn btn-primary" (click)="Number()">Bilan </button>
+<h1>{{s}}</h1>

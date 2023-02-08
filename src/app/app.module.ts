@@ -5,12 +5,18 @@ import { AppComponent } from './app.component';
  import { ProductsComponentComponent } from './products-component/products-component.component';
 import { FormsModule } from '@angular/forms';
 import { NavbarComponent } from './navbar/navbar.component';
+import { OffresEmploisComponent } from './offres-emplois/offres-emplois.component';
+import { NotFountComponent } from './not-fount/not-fount.component';
+import { ProductDetailComponent } from './product-detail/product-detail.component';
  
 @NgModule({
   declarations: [
     AppComponent,
      ProductsComponentComponent,
-    NavbarComponent 
+    NavbarComponent,
+    OffresEmploisComponent,
+    NotFountComponent,
+    ProductDetailComponent 
   ],
   imports: [
     BrowserModule,

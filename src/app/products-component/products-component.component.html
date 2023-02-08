@@ -16,6 +16,7 @@
         <p class="card-text"> likes : {{p.like}}</p>
         <button href="#" class="btn btn-primary" (click)="buy(i)" [disabled]="p.quantity==0" style="margin-right: 5px;">buy</button> 
         <button href="#" class="btn btn-primary" (click)="like(i)">like</button>
+        <button [routerLink]="[p.id] "class="btn btn-info" >Learn More</button>
       </div>
       </div>
     </div>
