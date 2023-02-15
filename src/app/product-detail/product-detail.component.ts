@@ -12,7 +12,6 @@ id! : number ;
 
   ngOnInit(): void {
     this.id = this.route.snapshot.params['id'];
-
   }
 
 }

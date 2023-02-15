@@ -8,6 +8,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { OffresEmploisComponent } from './offres-emplois/offres-emplois.component';
 import { NotFountComponent } from './not-fount/not-fount.component';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
+import { FormComponent } from './form/form.component';
  
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { ProductDetailComponent } from './product-detail/product-detail.componen
     NavbarComponent,
     OffresEmploisComponent,
     NotFountComponent,
-    ProductDetailComponent 
+    ProductDetailComponent,
+    FormComponent 
   ],
   imports: [
     BrowserModule,
