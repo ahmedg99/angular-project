@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Product } from '../core/model/Product';
+import { ServicesService } from '../services.service';
 
 @Component({
   selector: 'app-products-component',
@@ -9,21 +10,19 @@ import { Product } from '../core/model/Product';
 export class ProductsComponentComponent implements OnInit {
 
   title : string =  "ahmed" ; 
-  listProdcut! : Product[];
-  priceMax! : number ; 
-  
+   priceMax! : number ; 
+   listProdcut!:Product[];
+   s=0 ;  
 
     
-  constructor() { }
+  constructor(private serviceProducts : ServicesService ) { 
+    
+  }
 
   ngOnInit(): void {
-    this.listProdcut
-    =[
-      {id: 1, title: "T-shirt 1", price: 18, quantity: 0, like: 0},
-      {id: 2, title: "T-shirt 2", price: 21, quantity: 10, like: 0},
-      {id: 3, title: "T-shirt 3", price: 16, quantity: 8, like: 0},  {id: 1, title: "T-shirt 1", price: 18, quantity: 0, like: 0},
-      {id: 2, title: "T-shirt 2", price: 21, quantity: 10, like: 0},
-      {id: 3, title: "T-shirt 3", price: 16, quantity: 8, like: 0}, ] ;
+
+    this.listProdcut = this.serviceProducts.listProdcut ;
+ 
   }
   buy(i:number) {
     if(this.listProdcut[i].quantity>0)
@@ -33,13 +32,19 @@ export class ProductsComponentComponent implements OnInit {
     this.listProdcut[i].like++;
    }
 
+   number() {
+      this.s=this.serviceProducts.coutEntityByAttricute(this.serviceProducts.listProdcut , "quantity" , 0);
+      console.log(this.serviceProducts.coutEntityByAttricute(this.serviceProducts.listProdcut , "quantity" , 0));
 
+   }
    
    searchProducts(query : string ) {
       for (let i = 0; i<this.listProdcut.length ; i++) {
 
       console.log();
    }
+
+
 
 }
 }

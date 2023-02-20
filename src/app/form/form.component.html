@@ -4,7 +4,7 @@
             <label class=""> id : </label>
             <input for="" #i="ngModel" type="number" class="form-control
         "   
-                placeholder="Enter id" name="id" [(ngModel)]="product.id" required min="1" max="100"   [ngClass]="{'is-invalid':i.invalid , 'is-valid':i.valid}"  />
+                placeholder="Enter id" name="id" [(ngModel)]="product.id" required min="1" max="100"   [ngClass]="{'is-invalid':(i.invalid && (i.dirty || i.touched)) , 'is-valid':i.valid}"  />
             <div class=" invalid-feedback" *ngIf="i.value==null" >
                 veuillez remplir le champs id
             </div>
@@ -14,13 +14,13 @@
             <div class=" invalid-feedback" *ngIf="i.errors?.['min']">
                 id should be > 0 
             </div>
-            <div class="  valid-feedback "  *ngIf="i.valid">valid id</div>
+            <div class="  valid-feedback "  *ngIf="i.valid ">valid id</div>
         </div>
 
         <div class="form-group">
             <label class=""> title : </label>
             <input for="" #title="ngModel" type="text" class="form-control " id=""
-                placeholder="Enter title" name="title" [(ngModel)]="product.title" required minlength="3"   [ngClass]="{'is-invalid':title.invalid , 'is-valid':title.valid}" />
+                placeholder="Enter title" name="title" [(ngModel)]="product.title" required minlength="3"   [ngClass]="{'is-invalid':(title.invalid && (title.dirty || title.touched))  , 'is-valid':title.valid}" />
             <div class=" invalid-feedback" *ngIf="title.value == null">
                 veuillez remplir le champs title
             </div>
@@ -43,7 +43,7 @@
         </div>
 
         <br />
-        <button type="submit" class="btn btn-primary" [disabled]="f.invalid">
+        <button type="submit" class="btn btn-primary" [disabled]="f.invalid" (click)="addProduct(product)"  >
             Create
         </button>
     </form>
