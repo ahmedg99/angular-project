@@ -8,7 +8,7 @@
  
     <div class="card" style="width: 18rem;" *ngFor="let p of listProdcut ,let i=index">
       <div *ngIf="priceMax<p.price || priceMax==null">
-      <img src="../../assets/images/5f0b7189031725.5de839cf50769.jpg" class="card-img-top" alt="...">
+      <img src="../../assets/images/pic.jpg" class="card-img-top" alt="...">
       <div class="card-body">
         <h5 class="card-title">{{p.title}}</h5>
         <p class="card-text"> quantity : {{p.quantity}}</p>
@@ -16,6 +16,7 @@
         <p class="card-text"> likes : {{p.like}}</p>
         <button href="#" class="btn btn-primary" (click)="buy(i)" [disabled]="p.quantity==0" style="margin-right: 5px;">buy</button> 
         <button href="#" class="btn btn-primary" (click)="like(i)">like</button>
+        <div style="margin-top: 5px;"></div>
         <button [routerLink]="[p.id] "class="btn btn-info" >Learn More</button>
       </div>
       </div>
@@ -37,7 +38,12 @@
 <br>
 <br>
 
-<div style="margin: 50px;">
- <button href="#" class="btn btn-primary" (click)="number()">get number of product quatity ==0 </button>
-<h1>{{s}}</h1>
+
+<div class="d-grid gap-2">
+  <button class="btn btn-primary"  (click)="number()" type="button">get number of product having quatity 0 </button>
 </div>
+
+<h1 style="text-align: center;">{{s}}</h1>
+
+
+ 

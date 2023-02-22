@@ -30,16 +30,34 @@
             <div class=" valid-feedback " *ngIf="title.valid" >Valid title</div>
         </div>
 
+
+
         <div class="form-group">
             <label> price : </label>
-            <input type="text" class="form-control" placeholder="Enter price" name="price" [(ngModel)]="product.price"
+            <input type="number" class="form-control" #price="ngModel" [(ngModel)]="product.price"  min="1" max="5000"  placeholder="Enter price" name="price" [(ngModel)]="product.price" [ngClass]="{'is-invalid':(price.invalid && (price.dirty || price.touched))  , 'is-valid':price.valid}"
                 required="true" />
-        </div>
+                <div class=" invalid-feedback" *ngIf="price.errors?.['required']">
+                    veuillez remplir le champs price
+                </div>
+                <div class=" invalid-feedback" *ngIf="price.errors?.['min']">
+                     price should be greater that 0  
+                </div>
+                <div class=" valid-feedback " *ngIf="price.valid" >Valid price</div>
+            </div>
+    
+        
 
         <div class="form-group">
             <label> quantity : </label>
-            <input type="text" class="form-control" placeholder="Enter quantity" name="quatity"
-                [(ngModel)]="product.quantity" />
+            <input #quantity="ngModel" type="number" class="form-control" placeholder="Enter quantity" name="quantity"    [ngClass]="{'is-invalid':(quantity.invalid && (quantity.dirty || quantity.touched))  , 'is-valid':quantity.valid}"
+                [(ngModel)]="product.quantity" required   />
+                <div class=" invalid-feedback" *ngIf="quantity.errors?.['required']">
+                    veuillez remplir le champs quantity
+                </div>
+                <div class=" invalid-feedback" *ngIf="quantity.errors?.['min']">
+                    quantity should be greater that 0  
+                </div>
+                <div class=" valid-feedback " *ngIf="quantity.valid" >Valid quantity</div>
         </div>
 
         <br />

@@ -7,6 +7,8 @@
         <button class="btn btn-outline-success" type="submit">Search</button>
       </div>
     </div>
+</nav>
+    <!--
 <div class="row">
 
 <div class="card" style="width: 18rem;" *ngFor="let emp of listOffresEmploi ,let i=index">
@@ -28,7 +30,37 @@
 
 </div>
 </div>
-</nav>
+
 <br>
 <button href="#" class="btn btn-primary" (click)="Number()">Bilan </button>
 <h1>{{s}}</h1>
+
+-->
+
+
+<div class="card" *ngFor="let emp of listOffresEmploi ,let i=index">
+  <div class="card-header">
+    {{emp.reference}}
+  </div>
+  <div class="card-body">
+    <h5 class="card-title"> {{emp.titre}}</h5>
+    <p class="card-text">{{emp.entreprise}}</p>
+    <p class="card-text">{{emp.etat}}</p>
+    <div class="d-grid gap-2 d-md-block">
+      <div *ngIf="emp.etat==true" > <button class="btn btn-primary"    type="button">postuler</button></div>
+      <div style="margin-top: 5px;"></div>
+      <div *ngIf="emp.etat==false" ><button class="btn btn-primary"   disabled type="button">Postuler</button></div>
+    </div>
+   </div>
+</div>
+
+<br>
+
+
+<div class="d-grid gap-2">
+   <button class="btn btn-primary"  (click)="Number()" type="button">number of offers having status false </button>
+</div>
+
+<h1 style="text-align: center;">{{s}}</h1>
+
+<div style="margin-top:155px ;"></div>

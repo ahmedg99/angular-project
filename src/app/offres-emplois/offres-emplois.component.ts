@@ -20,8 +20,8 @@ export class OffresEmploisComponent implements OnInit {
     {reference : "4" , titre : "offre 3" , entreprise : "telnet" , etat : true}]
   }
   Number() {
-    this.s = this.ServiceProduct.coutEntityByAttricute(this.ServiceProduct.listProdcut , "quantity" , 0)
-    console.log( this.ServiceProduct.coutEntityByAttricute(this.ServiceProduct.listProdcut , "quantity" , 0));
+    this.s = this.ServiceProduct.coutEntityByAttricute(this.ServiceProduct.listOffresEmploi , "etat" , false)
+    console.log( this.ServiceProduct.coutEntityByAttricute(this.ServiceProduct.listProdcut , "etat" , false));
   }
     /*
     for(let i = 0 ; i < this.listOffresEmploi.length ; i ++) {
