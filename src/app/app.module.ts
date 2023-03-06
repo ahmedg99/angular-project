@@ -9,7 +9,7 @@ import { OffresEmploisComponent } from './offres-emplois/offres-emplois.componen
 import { NotFountComponent } from './not-fount/not-fount.component';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
 import { FormComponent } from './form/form.component';
- 
+import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,7 +23,9 @@ import { FormComponent } from './form/form.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
+  
     ],
   providers: [],
   bootstrap: [AppComponent]

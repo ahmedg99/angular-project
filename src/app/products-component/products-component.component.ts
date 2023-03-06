@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ConsumerProductsService } from '../consumer-products.service';
 import { Product } from '../core/model/Product';
 import { ServicesService } from '../services.service';
 
@@ -15,13 +16,18 @@ export class ProductsComponentComponent implements OnInit {
    s=0 ;  
 
     
-  constructor(private serviceProducts : ServicesService ) { 
+  constructor(private serviceProducts : ServicesService, private consumerProducs : ConsumerProductsService  ) { 
     
   }
 
   ngOnInit(): void {
 
-    this.listProdcut = this.serviceProducts.listProdcut ;
+    //this.listProdcut = this.serviceProducts.listProdcut ;
+    this.consumerProducs.getProducts().subscribe( {
+      next : (data) =>  this.listProdcut =data,
+
+    
+    }); 
  
   }
   buy(i:number) {
