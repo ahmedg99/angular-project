@@ -10,6 +10,7 @@ import { NotFountComponent } from './not-fount/not-fount.component';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
 import { FormComponent } from './form/form.component';
 import { HttpClientModule } from '@angular/common/http';
+import { ProductItemComponent } from './product-item/product-item.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,7 +19,8 @@ import { HttpClientModule } from '@angular/common/http';
     OffresEmploisComponent,
     NotFountComponent,
     ProductDetailComponent,
-    FormComponent 
+    FormComponent,
+    ProductItemComponent 
   ],
   imports: [
     BrowserModule,

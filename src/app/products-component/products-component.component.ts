@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { ConsumerProductsService } from '../consumer-products.service';
 import { Product } from '../core/model/Product';
 import { ServicesService } from '../services.service';
@@ -16,8 +17,9 @@ export class ProductsComponentComponent implements OnInit {
    s=0 ;  
 
     
-  constructor(private serviceProducts : ServicesService, private consumerProducs : ConsumerProductsService  ) { 
-    
+  constructor(private serviceProducts : ServicesService, private consumerProducs : ConsumerProductsService , private ConsumerP : ConsumerProductsService , private route:Router ) { 
+    this.route.navigateByUrl('/products');
+
   }
 
   ngOnInit(): void {
@@ -46,11 +48,29 @@ export class ProductsComponentComponent implements OnInit {
    
    searchProducts(query : string ) {
       for (let i = 0; i<this.listProdcut.length ; i++) {
-
       console.log();
    }
+  }
+/*
+   deletep(i : number) {
+   return this.ConsumerP.delete(i).subscribe({
 
+    next : () => { 
+     this.listProdcut = this.listProdcut.filter((e)=> {e.id!=i}) ; 
+     //  this.route.navigateByUrl('/products');
+
+
+  }
+
+   });   
+   }
+   */
+   deletep(id: number) {
+    this.consumerProducs.delete(id).subscribe(() => {
+      this.listProdcut = this.listProdcut.filter(p => p.id !== id);
+    });
+  }
 
 
 }
-}
+

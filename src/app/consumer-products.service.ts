@@ -31,6 +31,11 @@ export class ConsumerProductsService {
      addProduct(product : Product) {
       return this.http.post(this.baseurl + '/products',product)
     }
+
+         // delete  PRODUCTS 
+         delete(id:number) {
+          return this.http.delete(this.baseurl + '/products' + '/'+id)
+        }
   
 
 
