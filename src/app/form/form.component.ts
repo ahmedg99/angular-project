@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Route, Router } from '@angular/router';
+import { ConsumerProductsService } from '../consumer-products.service';
 import { Product } from '../core/model/Product';
 import { ServicesService } from '../services.service';
 
@@ -13,7 +14,7 @@ export class FormComponent implements OnInit {
   msg ! : string ;
   listProducts  !: Product[];
 
-  constructor(private  productService : ServicesService , private route:Router) { }
+  constructor(private  productService : ServicesService , private route:Router , private pS : ConsumerProductsService) { }
 
 
 
@@ -29,8 +30,18 @@ export class FormComponent implements OnInit {
 
 
 addProduct(product :Product) {
+
+this.pS.addProduct(this.product).subscribe({
+  next : () => this.route.navigateByUrl('/products')
+})
+
+
+  /*
+
+  this.addProduct(this.product) ;
    this.productService.addProduct(this.product);
    this.route.navigateByUrl('/products');
+   */
 }
 
 

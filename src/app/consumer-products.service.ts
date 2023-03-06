@@ -27,6 +27,11 @@ export class ConsumerProductsService {
       .get<Product[]>(this.baseurl + '/products') ;
   }
 
+     // add ALL PRODUCTS 
+     addProduct(product : Product) {
+      return this.http.post(this.baseurl + '/products',product)
+    }
+  
 
 
 }
