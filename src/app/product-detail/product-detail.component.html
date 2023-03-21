@@ -1,2 +1,11 @@
 <p>product-detail works!</p>
 {{list[id].title}}
+
+
+<div class="card">
+    <p-dataView #dv [value]="list" [paginator]="true" [rows]="9" filterBy="name"> 
+         <ng-template pTemplate="header">
+
+        </ng-template>
+    </p-dataView>
+</div>
