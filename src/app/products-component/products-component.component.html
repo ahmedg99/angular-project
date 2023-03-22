@@ -1,50 +1,42 @@
-<nav class="navbar navbar-light bg-light">
-  <div class="container-fluid">
-    <div class="d-flex" style="margin-bottom: 50px;">
-      <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" [(ngModel)]="priceMax">
-      <button class="btn btn-outline-success" type="submit">Search</button>
-    </div>
-  </div>
- 
-    <div class="card" style="width: 18rem;" *ngFor="let p of listProdcut ,let i=index">
-      <div *ngIf="priceMax<p.price || priceMax==null">
-      <img src="../../assets/images/pic.jpg" class="card-img-top" alt="...">
-      <div class="card-body">
-        <h5 class="card-title">{{p.title}}</h5>
-        <p class="card-text"> quantity : {{p.quantity}}</p>
-        <p class="card-text"> price : {{p.price}}</p>
-        <p class="card-text"> likes : {{p.like}}</p>
-        <button href="#" class="btn btn-primary" (click)="buy(i)" [disabled]="p.quantity==0" style="margin-right: 5px;">buy</button> 
-        <button href="#" class="btn btn-primary" (click)="like(i)">like</button>
-        <button href="#" class="btn btn-primary" (click)="deletep(p.id)">like</button>
-        <div style="margin-top: 5px;"></div>
-        <button [routerLink]="[p.id] "class="btn btn-info" >Learn More</button>
-      </div>
+<div class="d-flex justify-content-center bg-light">
+  <nav class="navbar navbar-light bg-light">
+    <div class="container-fluid">
+      <div class="d-flex" style="margin-bottom: 50px">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" [(ngModel)]="priceMax" />
+        <button class="btn btn-outline-success" type="submit">Search</button>
       </div>
     </div>
-
-
-
-</nav>
-    <!--
-    
-<nav class="navbar navbar-light bg-light">
-  <div class="container-fluid">
-    <form class="d-flex">
-      <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" [(ngModel)]="priceMax">
-      <button class="btn btn-outline-success" type="submit">Search</button>
-    </form>
-  </div>
-</nav>-->
-<br>
-<br>
-
-
-<div class="d-grid gap-2">
-  <button class="btn btn-primary"  (click)="number()" type="button">get number of product having quatity 0 </button>
+  </nav>
 </div>
 
-<h1 style="text-align: center;">{{s}}</h1>
+<div  class="cards">
+  <div class="card" *ngFor="let p of listProdcut; let i = index">
+    <div *ngIf="priceMax < p.price || priceMax == null">
+      <img src="../../assets/images/pic.jpg" class="card-img-top" alt="..." />
+      <div class="card-body">
+        <h5 class="card-title">{{ p.title }}</h5>
+        <p class="card-text">quantity : {{ p.quantity }}</p>
+        <p class="card-text">price : {{ p.price }}</p>
+        <p class="card-text">likes : {{ p.like }}</p>
+        <button href="#" class="btn btn-primary" (click)="buy(i)" [disabled]="p.quantity == 0"style="margin-right: 5px"><i class="fa fa-cart-arrow-down" aria-hidden="true"></i></button>
+        <button href="#" class="btn btn-primary" (click)="like(i)" style="margin-right: 5px"><i class="fa fa-heart"></i></button>
+        <button href="#" class="btn btn-primary" (click)="deletep(p.id)"><i class="fa fa-trash"></i></button>
+        <div style="margin-top: 5px"></div>
+        <button [routerLink]="[p.id]" class="btn btn-info">More</button>
+      </div>
+    </div>
+  </div>
+</div>
 
 
- 
+
+<br />
+<br />
+
+<div class="d-grid gap-2">
+  <button class="btn btn-primary" (click)="number()" type="button">
+    get number of product having quatity 0
+  </button>
+</div>
+
+<h1 style="text-align: center">{{ s }}</h1>
