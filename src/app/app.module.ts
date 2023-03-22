@@ -13,8 +13,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { ProductItemComponent } from './product-item/product-item.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
-import {DataViewModule} from 'primeng/dataview';
-@NgModule({
+ @NgModule({
   declarations: [
     AppComponent,
      ProductsComponentComponent,
@@ -32,7 +31,7 @@ import {DataViewModule} from 'primeng/dataview';
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    DataViewModule
+     
   
     ],
   providers: [],
