@@ -13,6 +13,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { ProductItemComponent } from './product-item/product-item.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
+import { HomeComponent } from './home/home.component';
  @NgModule({
   declarations: [
     AppComponent,
@@ -24,7 +25,8 @@ import { FooterComponent } from './footer/footer.component';
     FormComponent,
     ProductItemComponent,
     HeaderComponent,
-    FooterComponent ,
+    FooterComponent,
+    HomeComponent ,
    ],
   imports: [
     BrowserModule,
